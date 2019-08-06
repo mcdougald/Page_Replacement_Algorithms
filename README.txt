@@ -4,7 +4,7 @@ Hello, I completed my assignment 4 using an IPython Notebook, also known
 as a Jupyter Labs Notebook. You can see the program at https://github.com/TrevorMcDougald/Page_Replacement_Algorithms
 or you can run it using Python 3.7 and Jupyter Labs. Thank you for your time.
 
-You can execute the python code with "python ./Page_Replacement_Algorithms.py"
+You can execute the python code with "python ./Page_Replacement_Algorithms.py" to change the number of frames between 1 - 4 or the number of pages in the reference string, the source code needs to be updated. 
 
 ########################### TRIAL RUN ONE##################################
 Reference String: [3, 5, 5, 3, 4, 5, 5, 3, 1, 5]
