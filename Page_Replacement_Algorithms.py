@@ -193,6 +193,8 @@ def least_recently_used(total_frames, reference_string):
                     print("[ - ]", end=" ")
             print(" Hit", end="")
     return LRU_faults
+
+
 # %%
 
 
@@ -231,7 +233,9 @@ def first_in_first_out(total_frames, reference_string):
                 break
             # Page fault, the requested page isn't in page frame
         if not in_memory:
-            first_page_in = (first_page_in + 1) % total_frames  # Ensure the first_page_in doesn't run past
+            first_page_in = (
+                first_page_in + 1
+            ) % total_frames  # Ensure the first_page_in doesn't run past
             # total_frames of FIFO_frames
             FIFO_frames[first_page_in] = reference_string[page]
 
@@ -262,8 +266,10 @@ print("\n\n\t\t\tTotal Optimal Page Faults : %d." % optimal_algo_faults, end="")
 print("\n\t\t\tTotal Least Recently Used Faults : %d." % lru_algo_faults)
 
 # %%
-if (optimal_algo_faults == lru_algo_faults):
-    print("\n\nIt was a tie! The Optimal and Least Recently Used Page Replacement Algorithms Were Equal")
+if optimal_algo_faults == lru_algo_faults:
+    print(
+        "\n\nIt was a tie! The Optimal and Least Recently Used Page Replacement Algorithms Were Equal"
+    )
     print("The Tie Breaker will be settled with the First In First Out algorithm")
 
     print("\n\n\t\tFirst In First Out Page Replacement Algorithm: ")
@@ -271,18 +277,12 @@ if (optimal_algo_faults == lru_algo_faults):
 
     print("\n\n\t\t\tTotal First in First Out Page Faults : %d." % lru_algo_faults)
 
-    if (fifo_algo_faults < lru_algo_faults):
+    if fifo_algo_faults < lru_algo_faults:
         print("\n\n\t\tFirst In First Out Lost to LRU and Optimal")
     else:
-        print("\n\n\t\tFirst In First Out was less than LRU and Optimal Page Replacement")
+        print(
+            "\n\n\t\tFirst In First Out was less than LRU and Optimal Page Replacement"
+        )
 else:
     print("\n\n\t\tOptimal Page Replacement Algorithm was the most efficient. ")
 
-# # %%
-# # print("\n\n\t\tFirst In First Out Page Replacement Algorithm: ")
-# # fifo_algo_faults = first_in_first_out(TOTAL_FRAMES, reference_string)
-#
-# # %%
-# print("\n\n\t\t\tTotal Optimal Page Faults : %d." % optimal_algo_faults, end="")
-# print("\n\t\t\tTotal Least Recently Used Faults : %d." % lru_algo_faults)
-# # print("\n\t\t\tTotal First in First Out Page Faults : %d." % lru_algo_faults)
